@@ -1,0 +1,16 @@
+[!] Could not populate PLT: No module named 'distutils.sysconfig'
+[*] '/home/user/chal'
+    Arch:     amd64-64-little
+    RELRO:    Full RELRO
+    Stack:    Canary found
+    NX:       NX enabled
+    PIE:      PIE enabled
+[x] Opening connection to 127.0.0.1 on port 1337
+[x] Opening connection to 127.0.0.1 on port 1337: Trying 127.0.0.1
+[+] Opening connection to 127.0.0.1 on port 1337: Done
+[x] Receiving all data
+[x] Receiving all data: 0B
+[x] Receiving all data: 99B
+[x] Receiving all data: 248B
+[+] Receiving all data: Done (248B)
+[*] Closed connection to 127.0.0.1 port 1337

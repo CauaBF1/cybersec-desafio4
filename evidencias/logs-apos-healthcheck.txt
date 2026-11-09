@@ -1,0 +1,50 @@
++ mount -t proc none /kctf/.fullproc/proc
+[I][2026-11-09T17:57:28+0000] Mode: STANDALONE_ONCE
+[I][2026-11-09T17:57:28+0000] Jail parameters: hostname:'NSJAIL', chroot:'', process:'/home/user/chal', bind:[::]:0, max_conns:0, max_conns_per_ip:0, time_limit:600, personality:0, daemonize:false, clone_newnet:true, clone_newuser:true, clone_newns:true, clone_newpid:true, clone_newipc:true, clone_newuts:true, clone_newcgroup:true, clone_newtime:false, keep_caps:false, disable_no_new_privs:false, max_cpus:0
+[I][2026-11-09T17:57:28+0000] Mount: '/' flags:MS_RDONLY type:'tmpfs' options:'' dir:true
+[I][2026-11-09T17:57:28+0000] Mount: '/chroot' -> '/' flags:MS_RDONLY|MS_BIND|MS_REC|MS_PRIVATE type:'' options:'' dir:true
+[I][2026-11-09T17:57:28+0000] Mount: '/tmp' flags: type:'tmpfs' options:'' dir:true
+[I][2026-11-09T17:57:28+0000] Mount: '/proc' flags: type:'proc' options:'' dir:true
+[I][2026-11-09T17:57:28+0000] Mount: '/etc/resolv.conf' -> '/etc/resolv.conf' flags:MS_RDONLY|MS_BIND|MS_REC|MS_PRIVATE type:'' options:'' dir:false
+[I][2026-11-09T17:57:28+0000] Uid map: inside_uid:1000 outside_uid:1000 count:1 newuidmap:false
+[I][2026-11-09T17:57:28+0000] Gid map: inside_gid:1000 outside_gid:1000 count:1 newgidmap:false
+[I][2026-11-09T17:57:28+0000] Executing '/home/user/chal' for '[STANDALONE MODE]'
+2026/11/09 17:57:28 socat[12] E write(6, 0x5638094cc870, 262): Broken pipe
+[I][2026-11-09T17:57:28+0000] pid=14 ([STANDALONE MODE]) terminated with signal: SIGKILL (9), (PIDs left: 0)
+[I][2026-11-09T17:57:28+0000] Server stops due to fatal signal (15) caught. Exiting
+[I][2026-11-09T17:57:36+0000] Mode: STANDALONE_ONCE
+[I][2026-11-09T17:57:36+0000] Jail parameters: hostname:'NSJAIL', chroot:'', process:'/home/user/chal', bind:[::]:0, max_conns:0, max_conns_per_ip:0, time_limit:600, personality:0, daemonize:false, clone_newnet:true, clone_newuser:true, clone_newns:true, clone_newpid:true, clone_newipc:true, clone_newuts:true, clone_newcgroup:true, clone_newtime:false, keep_caps:false, disable_no_new_privs:false, max_cpus:0
+[I][2026-11-09T17:57:36+0000] Mount: '/' flags:MS_RDONLY type:'tmpfs' options:'' dir:true
+[I][2026-11-09T17:57:36+0000] Mount: '/chroot' -> '/' flags:MS_RDONLY|MS_BIND|MS_REC|MS_PRIVATE type:'' options:'' dir:true
+[I][2026-11-09T17:57:36+0000] Mount: '/tmp' flags: type:'tmpfs' options:'' dir:true
+[I][2026-11-09T17:57:36+0000] Mount: '/proc' flags: type:'proc' options:'' dir:true
+[I][2026-11-09T17:57:36+0000] Mount: '/etc/resolv.conf' -> '/etc/resolv.conf' flags:MS_RDONLY|MS_BIND|MS_REC|MS_PRIVATE type:'' options:'' dir:false
+[I][2026-11-09T17:57:36+0000] Uid map: inside_uid:1000 outside_uid:1000 count:1 newuidmap:false
+[I][2026-11-09T17:57:36+0000] Gid map: inside_gid:1000 outside_gid:1000 count:1 newgidmap:false
+[I][2026-11-09T17:57:36+0000] Executing '/home/user/chal' for '[STANDALONE MODE]'
+[I][2026-11-09T17:57:36+0000] pid=17 ([STANDALONE MODE]) terminated with signal: SIGSEGV (11), (PIDs left: 0)
+2026/11/09 17:57:36 socat[15] E waitpid(): child 16 exited with status 139
+[I][2026-11-09T17:57:48+0000] Mode: STANDALONE_ONCE
+[I][2026-11-09T17:57:48+0000] Jail parameters: hostname:'NSJAIL', chroot:'', process:'/home/user/chal', bind:[::]:0, max_conns:0, max_conns_per_ip:0, time_limit:600, personality:0, daemonize:false, clone_newnet:true, clone_newuser:true, clone_newns:true, clone_newpid:true, clone_newipc:true, clone_newuts:true, clone_newcgroup:true, clone_newtime:false, keep_caps:false, disable_no_new_privs:false, max_cpus:0
+[I][2026-11-09T17:57:48+0000] Mount: '/' flags:MS_RDONLY type:'tmpfs' options:'' dir:true
+[I][2026-11-09T17:57:48+0000] Mount: '/chroot' -> '/' flags:MS_RDONLY|MS_BIND|MS_REC|MS_PRIVATE type:'' options:'' dir:true
+[I][2026-11-09T17:57:48+0000] Mount: '/tmp' flags: type:'tmpfs' options:'' dir:true
+[I][2026-11-09T17:57:48+0000] Mount: '/proc' flags: type:'proc' options:'' dir:true
+[I][2026-11-09T17:57:48+0000] Mount: '/etc/resolv.conf' -> '/etc/resolv.conf' flags:MS_RDONLY|MS_BIND|MS_REC|MS_PRIVATE type:'' options:'' dir:false
+[I][2026-11-09T17:57:48+0000] Uid map: inside_uid:1000 outside_uid:1000 count:1 newuidmap:false
+[I][2026-11-09T17:57:48+0000] Gid map: inside_gid:1000 outside_gid:1000 count:1 newgidmap:false
+[I][2026-11-09T17:57:48+0000] Executing '/home/user/chal' for '[STANDALONE MODE]'
+[I][2026-11-09T17:57:48+0000] pid=20 ([STANDALONE MODE]) exited with status: 0, (PIDs left: 0)
+[I][2026-11-09T17:59:36+0000] Mode: STANDALONE_ONCE
+[I][2026-11-09T17:59:36+0000] Jail parameters: hostname:'NSJAIL', chroot:'', process:'/home/user/chal', bind:[::]:0, max_conns:0, max_conns_per_ip:0, time_limit:600, personality:0, daemonize:false, clone_newnet:true, clone_newuser:true, clone_newns:true, clone_newpid:true, clone_newipc:true, clone_newuts:true, clone_newcgroup:true, clone_newtime:false, keep_caps:false, disable_no_new_privs:false, max_cpus:0
+[I][2026-11-09T17:59:36+0000] Mount: '/' flags:MS_RDONLY type:'tmpfs' options:'' dir:true
+[I][2026-11-09T17:59:36+0000] Mount: '/chroot' -> '/' flags:MS_RDONLY|MS_BIND|MS_REC|MS_PRIVATE type:'' options:'' dir:true
+[I][2026-11-09T17:59:36+0000] Mount: '/tmp' flags: type:'tmpfs' options:'' dir:true
+[I][2026-11-09T17:59:36+0000] Mount: '/proc' flags: type:'proc' options:'' dir:true
+[I][2026-11-09T17:59:36+0000] Mount: '/etc/resolv.conf' -> '/etc/resolv.conf' flags:MS_RDONLY|MS_BIND|MS_REC|MS_PRIVATE type:'' options:'' dir:false
+[I][2026-11-09T17:59:36+0000] Uid map: inside_uid:1000 outside_uid:1000 count:1 newuidmap:false
+[I][2026-11-09T17:59:36+0000] Gid map: inside_gid:1000 outside_gid:1000 count:1 newgidmap:false
+[I][2026-11-09T17:59:36+0000] Executing '/home/user/chal' for '[STANDALONE MODE]'
+2026/11/09 17:59:37 socat[21] E write(6, 0x5638094cc870, 758): Broken pipe
+[I][2026-11-09T17:59:37+0000] pid=23 ([STANDALONE MODE]) terminated with signal: SIGKILL (9), (PIDs left: 0)
+[I][2026-11-09T17:59:37+0000] Server stops due to fatal signal (15) caught. Exiting

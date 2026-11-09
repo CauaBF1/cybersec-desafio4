@@ -1,0 +1,168 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 500B done
+#1 WARN: FromAsCasing: 'as' and 'FROM' keywords' casing do not match (line 1)
+#1 DONE 0.1s
+
+#2 [internal] load metadata for gcr.io/kctf-docker/challenge@sha256:eb0f8c3b97460335f9820732a42702c2fa368f7d121a671c618b45bbeeadab28
+#2 ...
+
+#3 [internal] load metadata for docker.io/library/ubuntu:22.04
+#3 DONE 1.6s
+
+#2 [internal] load metadata for gcr.io/kctf-docker/challenge@sha256:eb0f8c3b97460335f9820732a42702c2fa368f7d121a671c618b45bbeeadab28
+#2 DONE 2.6s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.1s
+
+#5 [stage-1 1/6] FROM gcr.io/kctf-docker/challenge@sha256:eb0f8c3b97460335f9820732a42702c2fa368f7d121a671c618b45bbeeadab28
+#5 resolve gcr.io/kctf-docker/challenge@sha256:eb0f8c3b97460335f9820732a42702c2fa368f7d121a671c618b45bbeeadab28
+#5 resolve gcr.io/kctf-docker/challenge@sha256:eb0f8c3b97460335f9820732a42702c2fa368f7d121a671c618b45bbeeadab28 0.1s done
+#5 ...
+
+#6 [internal] load build context
+#6 transferring context: 18.84kB done
+#6 DONE 0.2s
+
+#7 [chroot 1/1] FROM docker.io/library/ubuntu:22.04@sha256:076e7bf82319619f28dd0aa9c02ab34b055ad37100395b4f49a2ffba04fb5e11
+#7 resolve docker.io/library/ubuntu:22.04@sha256:076e7bf82319619f28dd0aa9c02ab34b055ad37100395b4f49a2ffba04fb5e11 0.1s done
+#7 DONE 0.3s
+
+#7 [chroot 1/1] FROM docker.io/library/ubuntu:22.04@sha256:076e7bf82319619f28dd0aa9c02ab34b055ad37100395b4f49a2ffba04fb5e11
+#7 sha256:0626d3cc316c9fea3d4891e2ec19b8f371fe22ffb915622f6072a2ee2ca9017f 0B / 29.75MB 0.2s
+#7 sha256:0626d3cc316c9fea3d4891e2ec19b8f371fe22ffb915622f6072a2ee2ca9017f 4.19MB / 29.75MB 0.5s
+#7 sha256:0626d3cc316c9fea3d4891e2ec19b8f371fe22ffb915622f6072a2ee2ca9017f 6.29MB / 29.75MB 0.6s
+#7 sha256:0626d3cc316c9fea3d4891e2ec19b8f371fe22ffb915622f6072a2ee2ca9017f 8.39MB / 29.75MB 0.8s
+#7 sha256:0626d3cc316c9fea3d4891e2ec19b8f371fe22ffb915622f6072a2ee2ca9017f 10.49MB / 29.75MB 0.9s
+#7 sha256:0626d3cc316c9fea3d4891e2ec19b8f371fe22ffb915622f6072a2ee2ca9017f 12.58MB / 29.75MB 1.1s
+#7 sha256:0626d3cc316c9fea3d4891e2ec19b8f371fe22ffb915622f6072a2ee2ca9017f 15.73MB / 29.75MB 1.2s
+#7 sha256:0626d3cc316c9fea3d4891e2ec19b8f371fe22ffb915622f6072a2ee2ca9017f 18.87MB / 29.75MB 1.4s
+#7 sha256:0626d3cc316c9fea3d4891e2ec19b8f371fe22ffb915622f6072a2ee2ca9017f 22.02MB / 29.75MB 1.5s
+#7 sha256:0626d3cc316c9fea3d4891e2ec19b8f371fe22ffb915622f6072a2ee2ca9017f 25.17MB / 29.75MB 1.7s
+#7 sha256:0626d3cc316c9fea3d4891e2ec19b8f371fe22ffb915622f6072a2ee2ca9017f 28.31MB / 29.75MB 1.8s
+#7 sha256:0626d3cc316c9fea3d4891e2ec19b8f371fe22ffb915622f6072a2ee2ca9017f 29.75MB / 29.75MB 1.9s done
+#7 DONE 2.3s
+
+#5 [stage-1 1/6] FROM gcr.io/kctf-docker/challenge@sha256:eb0f8c3b97460335f9820732a42702c2fa368f7d121a671c618b45bbeeadab28
+#5 sha256:db86bc598334440acd7935a9d52dcf1d03abda0269e4cb88e8af1aa6c4c768c3 2.07kB / 2.07kB 0.5s done
+#5 sha256:cffe70b236e3d329c6551abe14c93a6501a86bf4cac6d1b7d8c6da440da6a39f 649B / 649B 1.3s done
+#5 sha256:37890c261b4da26e9e96041427214acc38886afa7165c27d41205305f9f736cf 373B / 373B 0.8s done
+#5 sha256:834ed4714b72379db2f4e82ca58f5192d82b88f76a71cb8069894433fcd2093d 602B / 602B 1.3s done
+#5 sha256:96ce457d812b5628c06c1297f9b8034f86aa510496894594e9acaf42cc35b4be 123B / 123B 0.5s done
+#5 sha256:16f3375773bb86903f6d56ccf08286c1de0f10548f7717f80b601ec426702ce5 0B / 132B 0.5s
+#5 sha256:bce98a7394baf38c756549defb724a813967c0aedb1d497297e0c3082a7b25d6 0B / 93B 0.3s
+#5 sha256:16f3375773bb86903f6d56ccf08286c1de0f10548f7717f80b601ec426702ce5 132B / 132B 0.6s done
+#5 sha256:bce98a7394baf38c756549defb724a813967c0aedb1d497297e0c3082a7b25d6 93B / 93B 0.5s done
+#5 sha256:1cebaeecac97413c29dd453ca6f59162abd22324a2c50e89596176b0854f06d7 0B / 3.96MB 0.2s
+#5 sha256:b5a5639a35621e38b2c6cda12482ff2d48ac11e5a0355a78a2f86957d5f1792d 0B / 237.90kB 0.2s
+#5 sha256:d04f22763206760d497bae7a7f969336864db8a024738628dfc0417df2dd70d0 0B / 1.79kB 0.2s
+#5 sha256:20cc7794b499fc7d9d4413332095e8189e80bfd56e63fa65ac5f71e23bd8c3ef 0B / 100.19MB 0.2s
+#5 sha256:d04f22763206760d497bae7a7f969336864db8a024738628dfc0417df2dd70d0 1.79kB / 1.79kB 0.6s done
+#5 sha256:01085d60b3a624c06a7132ff0749efc6e6565d9f2531d7685ff559fb5d0f669f 0B / 27.51MB 0.2s
+#5 ...
+
+#7 [chroot 1/1] FROM docker.io/library/ubuntu:22.04@sha256:076e7bf82319619f28dd0aa9c02ab34b055ad37100395b4f49a2ffba04fb5e11
+#7 extracting sha256:0626d3cc316c9fea3d4891e2ec19b8f371fe22ffb915622f6072a2ee2ca9017f 1.2s done
+#7 DONE 3.4s
+
+#5 [stage-1 1/6] FROM gcr.io/kctf-docker/challenge@sha256:eb0f8c3b97460335f9820732a42702c2fa368f7d121a671c618b45bbeeadab28
+#5 sha256:b5a5639a35621e38b2c6cda12482ff2d48ac11e5a0355a78a2f86957d5f1792d 237.90kB / 237.90kB 2.4s done
+#5 sha256:1cebaeecac97413c29dd453ca6f59162abd22324a2c50e89596176b0854f06d7 1.05MB / 3.96MB 2.9s
+#5 sha256:1cebaeecac97413c29dd453ca6f59162abd22324a2c50e89596176b0854f06d7 2.10MB / 3.96MB 3.0s
+#5 sha256:1cebaeecac97413c29dd453ca6f59162abd22324a2c50e89596176b0854f06d7 3.96MB / 3.96MB 3.1s done
+#5 sha256:20cc7794b499fc7d9d4413332095e8189e80bfd56e63fa65ac5f71e23bd8c3ef 6.29MB / 100.19MB 3.6s
+#5 sha256:20cc7794b499fc7d9d4413332095e8189e80bfd56e63fa65ac5f71e23bd8c3ef 12.58MB / 100.19MB 4.1s
+#5 sha256:01085d60b3a624c06a7132ff0749efc6e6565d9f2531d7685ff559fb5d0f669f 2.10MB / 27.51MB 3.5s
+#5 sha256:20cc7794b499fc7d9d4413332095e8189e80bfd56e63fa65ac5f71e23bd8c3ef 17.83MB / 100.19MB 4.8s
+#5 sha256:20cc7794b499fc7d9d4413332095e8189e80bfd56e63fa65ac5f71e23bd8c3ef 24.12MB / 100.19MB 5.6s
+#5 sha256:01085d60b3a624c06a7132ff0749efc6e6565d9f2531d7685ff559fb5d0f669f 4.19MB / 27.51MB 5.0s
+#5 sha256:20cc7794b499fc7d9d4413332095e8189e80bfd56e63fa65ac5f71e23bd8c3ef 29.36MB / 100.19MB 6.2s
+#5 sha256:20cc7794b499fc7d9d4413332095e8189e80bfd56e63fa65ac5f71e23bd8c3ef 34.60MB / 100.19MB 6.5s
+#5 sha256:01085d60b3a624c06a7132ff0749efc6e6565d9f2531d7685ff559fb5d0f669f 6.29MB / 27.51MB 6.0s
+#5 sha256:20cc7794b499fc7d9d4413332095e8189e80bfd56e63fa65ac5f71e23bd8c3ef 40.89MB / 100.19MB 6.9s
+#5 sha256:20cc7794b499fc7d9d4413332095e8189e80bfd56e63fa65ac5f71e23bd8c3ef 46.14MB / 100.19MB 7.2s
+#5 sha256:01085d60b3a624c06a7132ff0749efc6e6565d9f2531d7685ff559fb5d0f669f 8.39MB / 27.51MB 6.8s
+#5 sha256:20cc7794b499fc7d9d4413332095e8189e80bfd56e63fa65ac5f71e23bd8c3ef 51.38MB / 100.19MB 7.5s
+#5 sha256:20cc7794b499fc7d9d4413332095e8189e80bfd56e63fa65ac5f71e23bd8c3ef 56.62MB / 100.19MB 8.0s
+#5 sha256:01085d60b3a624c06a7132ff0749efc6e6565d9f2531d7685ff559fb5d0f669f 10.49MB / 27.51MB 7.4s
+#5 sha256:20cc7794b499fc7d9d4413332095e8189e80bfd56e63fa65ac5f71e23bd8c3ef 62.91MB / 100.19MB 8.4s
+#5 sha256:20cc7794b499fc7d9d4413332095e8189e80bfd56e63fa65ac5f71e23bd8c3ef 70.25MB / 100.19MB 8.9s
+#5 sha256:01085d60b3a624c06a7132ff0749efc6e6565d9f2531d7685ff559fb5d0f669f 12.58MB / 27.51MB 8.3s
+#5 sha256:20cc7794b499fc7d9d4413332095e8189e80bfd56e63fa65ac5f71e23bd8c3ef 76.55MB / 100.19MB 9.3s
+#5 sha256:20cc7794b499fc7d9d4413332095e8189e80bfd56e63fa65ac5f71e23bd8c3ef 81.79MB / 100.19MB 9.6s
+#5 sha256:01085d60b3a624c06a7132ff0749efc6e6565d9f2531d7685ff559fb5d0f669f 14.68MB / 27.51MB 9.0s
+#5 sha256:20cc7794b499fc7d9d4413332095e8189e80bfd56e63fa65ac5f71e23bd8c3ef 87.03MB / 100.19MB 9.9s
+#5 sha256:20cc7794b499fc7d9d4413332095e8189e80bfd56e63fa65ac5f71e23bd8c3ef 92.27MB / 100.19MB 10.2s
+#5 sha256:01085d60b3a624c06a7132ff0749efc6e6565d9f2531d7685ff559fb5d0f669f 16.78MB / 27.51MB 9.6s
+#5 sha256:20cc7794b499fc7d9d4413332095e8189e80bfd56e63fa65ac5f71e23bd8c3ef 97.52MB / 100.19MB 10.5s
+#5 sha256:20cc7794b499fc7d9d4413332095e8189e80bfd56e63fa65ac5f71e23bd8c3ef 100.19MB / 100.19MB 10.8s done
+#5 sha256:01085d60b3a624c06a7132ff0749efc6e6565d9f2531d7685ff559fb5d0f669f 19.92MB / 27.51MB 10.5s
+#5 sha256:01085d60b3a624c06a7132ff0749efc6e6565d9f2531d7685ff559fb5d0f669f 22.02MB / 27.51MB 11.1s
+#5 sha256:01085d60b3a624c06a7132ff0749efc6e6565d9f2531d7685ff559fb5d0f669f 24.12MB / 27.51MB 11.4s
+#5 sha256:01085d60b3a624c06a7132ff0749efc6e6565d9f2531d7685ff559fb5d0f669f 26.21MB / 27.51MB 11.6s
+#5 sha256:01085d60b3a624c06a7132ff0749efc6e6565d9f2531d7685ff559fb5d0f669f 27.51MB / 27.51MB 11.7s done
+#5 extracting sha256:01085d60b3a624c06a7132ff0749efc6e6565d9f2531d7685ff559fb5d0f669f
+#5 extracting sha256:01085d60b3a624c06a7132ff0749efc6e6565d9f2531d7685ff559fb5d0f669f 1.1s done
+#5 DONE 15.7s
+
+#5 [stage-1 1/6] FROM gcr.io/kctf-docker/challenge@sha256:eb0f8c3b97460335f9820732a42702c2fa368f7d121a671c618b45bbeeadab28
+#5 extracting sha256:20cc7794b499fc7d9d4413332095e8189e80bfd56e63fa65ac5f71e23bd8c3ef
+#5 extracting sha256:20cc7794b499fc7d9d4413332095e8189e80bfd56e63fa65ac5f71e23bd8c3ef 3.6s done
+#5 DONE 19.4s
+
+#5 [stage-1 1/6] FROM gcr.io/kctf-docker/challenge@sha256:eb0f8c3b97460335f9820732a42702c2fa368f7d121a671c618b45bbeeadab28
+#5 extracting sha256:d04f22763206760d497bae7a7f969336864db8a024738628dfc0417df2dd70d0 0.0s done
+#5 extracting sha256:b5a5639a35621e38b2c6cda12482ff2d48ac11e5a0355a78a2f86957d5f1792d 0.0s done
+#5 extracting sha256:1cebaeecac97413c29dd453ca6f59162abd22324a2c50e89596176b0854f06d7 0.1s done
+#5 DONE 19.6s
+
+#5 [stage-1 1/6] FROM gcr.io/kctf-docker/challenge@sha256:eb0f8c3b97460335f9820732a42702c2fa368f7d121a671c618b45bbeeadab28
+#5 extracting sha256:bce98a7394baf38c756549defb724a813967c0aedb1d497297e0c3082a7b25d6 0.0s done
+#5 extracting sha256:16f3375773bb86903f6d56ccf08286c1de0f10548f7717f80b601ec426702ce5 0.0s done
+#5 extracting sha256:96ce457d812b5628c06c1297f9b8034f86aa510496894594e9acaf42cc35b4be 0.0s done
+#5 DONE 19.7s
+
+#5 [stage-1 1/6] FROM gcr.io/kctf-docker/challenge@sha256:eb0f8c3b97460335f9820732a42702c2fa368f7d121a671c618b45bbeeadab28
+#5 extracting sha256:834ed4714b72379db2f4e82ca58f5192d82b88f76a71cb8069894433fcd2093d 0.0s done
+#5 extracting sha256:37890c261b4da26e9e96041427214acc38886afa7165c27d41205305f9f736cf 0.0s done
+#5 extracting sha256:cffe70b236e3d329c6551abe14c93a6501a86bf4cac6d1b7d8c6da440da6a39f 0.0s done
+#5 DONE 19.8s
+
+#5 [stage-1 1/6] FROM gcr.io/kctf-docker/challenge@sha256:eb0f8c3b97460335f9820732a42702c2fa368f7d121a671c618b45bbeeadab28
+#5 extracting sha256:db86bc598334440acd7935a9d52dcf1d03abda0269e4cb88e8af1aa6c4c768c3 0.0s done
+#5 DONE 19.9s
+
+#8 [stage-1 2/6] COPY --from=chroot / /chroot
+#8 DONE 0.8s
+
+#9 [stage-1 3/6] RUN mkdir -p /chroot/home/user
+#9 DONE 0.4s
+
+#10 [stage-1 4/6] COPY ./chal /chroot/home/user
+#10 DONE 0.1s
+
+#11 [stage-1 5/6] COPY ./flag.txt /chroot/home/user
+#11 DONE 0.1s
+
+#12 [stage-1 6/6] COPY nsjail.cfg /home/user/
+#12 DONE 0.2s
+
+#13 exporting to image
+#13 exporting layers
+#13 exporting layers 2.4s done
+#13 exporting manifest sha256:5a9985558f90452c3d621bdd33352536ce262331d6e50d3b459079b2f1f8d470 0.0s done
+#13 exporting config sha256:8ada57dcc7aaa7bc10bcfe5bad922c403ae90ebb96fae1c668a282d635296178 0.0s done
+#13 exporting attestation manifest sha256:51ac77d8a6026c8b82c5a721e6a59acc851acab82643b06d2ff6b316a6e3b6cf 0.0s done
+#13 exporting manifest list sha256:8ab65a7a60efebd1f72282e3311bc4ecfec8c84cf6c6775db872c9c5f31eef2a
+#13 exporting manifest list sha256:8ab65a7a60efebd1f72282e3311bc4ecfec8c84cf6c6775db872c9c5f31eef2a 0.0s done
+#13 naming to docker.io/library/pwnymalloc-local:oficial done
+#13 unpacking to docker.io/library/pwnymalloc-local:oficial
+#13 unpacking to docker.io/library/pwnymalloc-local:oficial 6.5s done
+#13 DONE 9.1s
+
+ [33m2 warnings found (use docker --debug to expand):
+[0m - FromAsCasing: 'as' and 'FROM' keywords' casing do not match (line 1)
+ - JSONArgsRecommended: JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 11)
