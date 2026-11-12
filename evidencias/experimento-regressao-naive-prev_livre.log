@@ -1,0 +1,7 @@
+[pwnymalloc] btag rejeitado: prev_size=0 candidato=0x5713b9681030 motivo=tamanho zero
+Block size: 48
+[pwnymalloc] btag aceito: prev_size=48 candidato=0x5713b9681030
+Block size: 128
+[pwnymalloc] btag rejeitado: prev_size=0 candidato=0x5713b9681030 motivo=tamanho zero
+Block size: 128
+[OK] prev_livre

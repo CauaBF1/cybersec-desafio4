@@ -88,6 +88,33 @@ documenta payloads, offsets de heap nem uma cadeia de exploração.
 - Adicione testes para as quatro combinações de estado dos chunks anterior e
   seguinte, incluindo a condição em que o chunk anterior está em uso.
 
+## Validação experimental (contribuição própria)
+
+Para testar a causa raiz por intervenção, foi montado o experimento em
+`experimento_causa_raiz/` (relatório detalhado em
+`experimento_causa_raiz/EXPLICACAO.md`). O mesmo payload do exploit é executado
+contra três versões do allocator: a original, uma com checagem de consistência
+do boundary tag e uma com `PREV_INUSE` + validação do tag.
+
+O resultado separa duas coisas que costumam ser confundidas:
+
+- a checagem de consistência, sozinha, bloqueia o payload original, mas é
+  contornável com um header e um footer falsos auto-consistentes;
+- com `PREV_INUSE`, o `coalesce()` não lê o footer quando o chunk anterior está
+  em uso; o payload original e o adaptado falham, o serviço continua
+  respondendo e o processo não crasha.
+
+A matriz completa, os logs e os testes de regressão estão em
+`experimento_causa_raiz/` e `evidencias/experimento-*`. Para reproduzir:
+
+```bash
+cd experimento_causa_raiz
+bash run_experimento.sh
+```
+
+O `pwnymalloc/challenge/alloc.c` original, o binário `chal` e o `flag.txt` não
+foram alterados; a correção vive em um derivado separado.
+
 ## Referências no código
 
 - `pwnymalloc/challenge/alloc.c`: `get_prev_size`, `prev_chunk`, `coalesce` e

@@ -1,0 +1,7 @@
+[teste] x=0x5da918049038 fake_hdr=0x5da918049050 tag_pos=0x5da918049078
+[pwnymalloc] btag rejeitado: prev_size=0 candidato=0x5da918049030 motivo=tamanho zero
+Block size: 272
+[pwnymalloc] btag aceito: prev_size=48 candidato=0x5da918049050
+[pwnymalloc] btag rejeitado: prev_size=0 candidato=0x5da918049110 motivo=tamanho zero
+test_naive: test_regressao.c:143: test_cauda_envenenada: Assertion `c == (char *) x + 0x50' failed.
+_: line 1: 285470 Aborted                    "$1" "$2"

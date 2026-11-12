@@ -1,0 +1,63 @@
+Welcome to the SIGPwny Transit Authority's customer service portal! How may we help you today>
+
+1. Submit a complaint
+2. View pending complaints
+3. Request a refund
+4. Check refund status
+5. Exit
+
+> Please enter the dollar amount you would like refunded:
+Please enter the reason for your refund request:
+Thank you for your request! We will process it shortly.
+Your request ID is: 0
+
+1. Submit a complaint
+2. View pending complaints
+3. Request a refund
+4. Check refund status
+5. Exit
+
+> Please enter the dollar amount you would like refunded:
+Please enter the reason for your refund request:
+Thank you for your request! We will process it shortly.
+Your request ID is: 1
+
+1. Submit a complaint
+2. View pending complaints
+3. Request a refund
+4. Check refund status
+5. Exit
+
+> Please enter your complaint:
+Block size: 160
+Thank you for your feedback! We take all complaints very seriously.
+
+1. Submit a complaint
+2. View pending complaints
+3. Request a refund
+4. Check refund status
+5. Exit
+
+> Please enter the dollar amount you would like refunded:
+Please enter the reason for your refund request:
+Thank you for your request! We will process it shortly.
+Your request ID is: 2
+
+1. Submit a complaint
+2. View pending complaints
+3. Request a refund
+4. Check refund status
+5. Exit
+
+> Please enter your request ID:
+Your refund request has been approved!
+We don't actually have any money, so here's a flag instead:
+uiuctf{the_memory_train_went_off_the_tracks}
+
+1. Submit a complaint
+2. View pending complaints
+3. Request a refund
+4. Check refund status
+5. Exit
+
+> 

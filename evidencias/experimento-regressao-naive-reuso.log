@@ -1,0 +1,5 @@
+[pwnymalloc] btag rejeitado: prev_size=0 candidato=0x560ee4716030 motivo=tamanho zero
+Block size: 48
+[pwnymalloc] btag rejeitado: prev_size=0 candidato=0x560ee4716030 motivo=tamanho zero
+Block size: 48
+[OK] reuso

@@ -1,0 +1,7 @@
+[poc] base=0x5d07e97ce000 rr0=0x5d07e97ce008 rr1=0x5d07e97ce098 complaint=0x5d07e97ce128
+[poc] variante=original header_falso=0x5d07e97ce078 size=0x50 prev_size=0xa8
+[poc] esperado_merge=0xa0
+[pwnymalloc] PREV_INUSE=1: btag em 0x5d07e97ce118 nao sera lido (chunk anterior em uso)
+Block size: 80
+[poc] novo_chunk=0x5d07e97ce170 overlap=nao offset_status=0 status_rr1=0
+RESULTADO: overlap=nao status_aprovado=nao

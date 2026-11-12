@@ -1,0 +1,79 @@
+============================================================
+ Experimento de causa raiz do pwnymalloc
+============================================================
+
+--- build ---
+make: Entering directory '/home/ronanpereira/cybersec-desafio4/experimento_causa_raiz'
+mkdir -p build
+cc -Wall -Wextra -O0 -g -I ../pwnymalloc/challenge -o build/chal_vuln ../pwnymalloc/challenge/main.c ../pwnymalloc/challenge/alloc.c
+cc -Wall -Wextra -O0 -g -I ../pwnymalloc/challenge -DPWN_BTAG_CHECK_ONLY -DPWN_DEBUG -o build/chal_naive \
+	../pwnymalloc/challenge/main.c alloc_hardened.c
+cc -Wall -Wextra -O0 -g -I ../pwnymalloc/challenge -DPWN_DEBUG -o build/chal_hardened ../pwnymalloc/challenge/main.c alloc_hardened.c
+cc -Wall -Wextra -O0 -g -I ../pwnymalloc/challenge -o build/poc_vuln poc_causa_raiz.c ../pwnymalloc/challenge/alloc.c
+cc -Wall -Wextra -O0 -g -I ../pwnymalloc/challenge -DPWN_BTAG_CHECK_ONLY -DPWN_DEBUG -o build/poc_naive poc_causa_raiz.c alloc_hardened.c
+cc -Wall -Wextra -O0 -g -I ../pwnymalloc/challenge -DPWN_DEBUG -o build/poc_hardened poc_causa_raiz.c alloc_hardened.c
+cc -Wall -Wextra -O0 -g -I ../pwnymalloc/challenge -o build/test_vuln test_regressao.c ../pwnymalloc/challenge/alloc.c
+cc -Wall -Wextra -O0 -g -I ../pwnymalloc/challenge -DPWN_BTAG_CHECK_ONLY -DPWN_DEBUG -o build/test_naive test_regressao.c alloc_hardened.c
+cc -Wall -Wextra -O0 -g -I ../pwnymalloc/challenge -DPWN_DEBUG -o build/test_hardened test_regressao.c alloc_hardened.c
+make: Leaving directory '/home/ronanpereira/cybersec-desafio4/experimento_causa_raiz'
+
+--- matriz de ataque ---
+=== Nivel 1: servico local (main.c + allocator) ===
+build      payload     block  flag   rc resultado 
+vuln       original      160  True    0 OK        
+vuln       adaptado      256  True    0 OK        
+naive      original       80 False    0 OK        
+naive      adaptado      256  True    0 OK        
+hardened   original       80 False    0 OK        
+hardened   adaptado       80 False    0 OK        
+=== Controle do rebuild ===
+chal versionado vs build/chal_vuln: identicos
+
+
+=== Nivel 2: allocator puro (poc_causa_raiz) ===
+build      payload     block  overlap  status   rc resultado 
+vuln       original      160      sim     sim    0 OK        
+vuln       adaptado      256      sim     sim    0 OK        
+naive      original       80      nao     nao    0 OK        
+naive      adaptado      256      sim     sim    0 OK        
+hardened   original       80      nao     nao    0 OK        
+hardened   adaptado       80      nao     nao    0 OK        
+
+MATRIZ OK: todos os casos bateram com a expectativa.
+
+--- regressao funcional ---
+[OK] vuln/basico (exit=0)
+[OK] naive/basico (exit=0)
+[OK] hardened/basico (exit=0)
+[OK] vuln/prev_livre (exit=0)
+[OK] naive/prev_livre (exit=0)
+[OK] hardened/prev_livre (exit=0)
+[OK] vuln/split (exit=0)
+[OK] naive/split (exit=0)
+[OK] hardened/split (exit=0)
+[OK] vuln/reuso (exit=0)
+[OK] naive/reuso (exit=0)
+[OK] hardened/reuso (exit=0)
+[OK] vuln/estresse (exit=0)
+[OK] naive/estresse (exit=0)
+[OK] hardened/estresse (exit=0)
+[OK] vuln/double_free (exit=0)
+[OK] naive/double_free (exit=0)
+[OK] hardened/double_free (exit=0)
+[OK] vuln/ponteiro_invalido (exit=0)
+[OK] naive/ponteiro_invalido (exit=0)
+[OK] hardened/ponteiro_invalido (exit=0)
+[OK] vuln/cauda_envenenada (exit=134)
+[OK] naive/cauda_envenenada (exit=134)
+[OK] hardened/cauda_envenenada (exit=0)
+
+--- smoke tests do servico endurecido ---
+[OK] smoke/menu
+[OK] smoke/refund
+
+--- fontes originais intactas ---
+make: Entering directory '/home/ronanpereira/cybersec-desafio4/experimento_causa_raiz'
+OK: allocator/binario/flag originais intactos
+make: Leaving directory '/home/ronanpereira/cybersec-desafio4/experimento_causa_raiz'
+
+RESUMO: EXPERIMENTO OK

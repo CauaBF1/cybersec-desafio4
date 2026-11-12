@@ -1,0 +1,7 @@
+[poc] base=0x59ac1e9ce000 rr0=0x59ac1e9ce008 rr1=0x59ac1e9ce098 complaint=0x59ac1e9ce128
+[poc] variante=original header_falso=0x59ac1e9ce078 size=0x50 prev_size=0xa8
+[poc] esperado_merge=0xa0
+[pwnymalloc] btag rejeitado: prev_size=168 candidato=0x59ac1e9ce078 motivo=desalinhado
+Block size: 80
+[poc] novo_chunk=0x59ac1e9ce170 overlap=nao offset_status=0 status_rr1=0
+RESULTADO: overlap=nao status_aprovado=nao

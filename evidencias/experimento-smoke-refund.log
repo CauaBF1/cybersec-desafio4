@@ -1,0 +1,29 @@
+Welcome to the SIGPwny Transit Authority's customer service portal! How may we help you today>
+
+1. Submit a complaint
+2. View pending complaints
+3. Request a refund
+4. Check refund status
+5. Exit
+
+> Please enter the dollar amount you would like refunded:
+Please enter the reason for your refund request:
+Thank you for your request! We will process it shortly.
+Your request ID is: 0
+
+1. Submit a complaint
+2. View pending complaints
+3. Request a refund
+4. Check refund status
+5. Exit
+
+> Please enter your request ID:
+Your refund request has been denied.
+
+1. Submit a complaint
+2. View pending complaints
+3. Request a refund
+4. Check refund status
+5. Exit
+
+> 

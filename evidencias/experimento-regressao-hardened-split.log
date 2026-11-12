@@ -1,0 +1,8 @@
+[pwnymalloc] PREV_INUSE=1: btag em 0x63b7c5dbb028 nao sera lido (chunk anterior em uso)
+Block size: 272
+[pwnymalloc] PREV_INUSE=1: btag em 0x63b7c5dbb078 nao sera lido (chunk anterior em uso)
+[pwnymalloc] PREV_INUSE=1: btag em 0x63b7c5dbb078 nao sera lido (chunk anterior em uso)
+Block size: 192
+[pwnymalloc] PREV_INUSE=1: btag em 0x63b7c5dbb028 nao sera lido (chunk anterior em uso)
+Block size: 272
+[OK] split
