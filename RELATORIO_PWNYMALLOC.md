@@ -57,6 +57,15 @@ do chunk precedente. Não é necessário enviar dados especialmente construídos
 executar a cadeia de exploração ou alterar o serviço para verificar a causa
 raiz no código.
 
+Além da inspeção acima, há um PoC mínimo executável que isola exatamente essa
+corrupção, ligando direto no allocator (sem socket, sem a cadeia completa):
+`exploit/frente_2/poc_boundary_tag.c`. Ele planta um header de chunk livre falso
+dentro de um chunk em uso e forja o `prev_size` lido na coalescência; ao liberar
+o chunk seguinte, o próprio allocator reporta `Block size: 112` (0x70 = 0x30 do
+chunk real + 0x40 escolhido pelo atacante), confirmando que o tamanho do bloco
+resultante foi definido por dado de usuário, e não por um chunk livre real. As
+instruções de execução estão em `exploit/frente_2/FRENTE_2.md`.
+
 ## Impacto
 
 A coalescência pode tratar dados que não são um footer válido como metadados do
