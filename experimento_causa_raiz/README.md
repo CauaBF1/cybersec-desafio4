@@ -20,8 +20,8 @@ tests do serviço endurecido e grava as evidências em `../evidencias/`.
   `-DPWN_BTAG_CHECK_ONLY`, modo final com `PREV_INUSE`.
 - `poc_causa_raiz.c` — ataque no nível do allocator, sem menu.
 - `harness_exploit.py` — matriz de ataque no serviço local, só stdlib.
-- `test_regressao.c` — testes funcionais e o teste da cauda envenenada no
-  `split()`.
+- `test_regressao.c` — testes funcionais (incluindo reuso via free list,
+  estresse curto e o teste da cauda envenenada no `split()`).
 - `patches/` — diff completo e explicação dos dois modos.
 - `Makefile` — builds e geração do diff.
 

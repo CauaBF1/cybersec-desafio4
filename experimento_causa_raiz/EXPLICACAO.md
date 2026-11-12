@@ -282,6 +282,11 @@ Resultados:
   exatamente o ponteiro de A. Isso prova que a validação do tag não quebrou a
   coalescência legítima com o chunk anterior livre.
 - `split`: passa nos três.
+- `reuso`: passa nos três. Liberar e pedir o mesmo tamanho devolve exatamente
+  o mesmo bloco pela free list, sem estender o heap.
+- `estresse`: passa nos três. Sessenta e quatro alocações pequenas, liberação
+  de todas e uma alocação final mantêm o bookkeeping de `PREV_INUSE`
+  consistente.
 - `cauda_envenenada`: falha em `vuln` e `naive` (o ataque funciona) e passa em
   `hardened`.
 - `double_free` e `ponteiro_invalido`: passam nos três; as checagens existentes
@@ -321,9 +326,9 @@ queremos mostrar que o exploit perde a primitiva sem derrubar o serviço.
   allocator, não o container/nsjail. O `healthcheck.py` oficial é, ele próprio,
   um exploit: contra o serviço endurecido ele deve falhar, e por isso não é
   usado como teste de regressão funcional.
-- O `extend_heap()` endurecido percorre o heap para achar o último chunk. É
-  `O(n)`, aceitável para este allocator e para o número de chunks do desafio;
-  um allocator de produção manteria um ponteiro para o topo.
+- O `extend_heap()` mantém o status do último chunk em uma variável
+  (`heap_tail_inuse`), então descobrir o `PREV_INUSE` do chunk novo é `O(1)`;
+  não é preciso varrer o heap.
 - O experimento depende de o layout dos chunks ser determinístico. O allocator
   usa `sbrk()` diretamente e o `main.c` desabilita o buffer de stdio; os testes
   fazem o mesmo. Sem isso, o primeiro `printf` pode deslocar o break e os chunks

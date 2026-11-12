@@ -99,6 +99,52 @@ static void test_split(void) {
 }
 
 /*
+ * Reuso direto via free list: liberar e pedir o mesmo tamanho deve devolver
+ * exatamente o mesmo bloco, sem estender o heap e sem perder a integridade.
+ */
+static void test_reuso(void) {
+    alocar_guarda();
+
+    void *a = pwnymalloc(0x20);
+    assert(a != NULL);
+
+    pwnyfree(a);
+
+    void *b = pwnymalloc(0x20);
+    assert(b != NULL);
+    assert(b == a);
+
+    pwnyfree(b);
+
+    puts("[OK] reuso");
+}
+
+/*
+ * Estresse curto: varias alocacoes pequenas, liberacao de todas e uma
+ * alocacao final. Prova que o bookkeeping de PREV_INUSE continua consistente
+ * depois de varios extend_heap()/free().
+ */
+static void test_estresse(void) {
+    alocar_guarda();
+
+    void *ptrs[64];
+    for (int i = 0; i < 64; i++) {
+        ptrs[i] = pwnymalloc(0x18);
+        assert(ptrs[i] != NULL);
+    }
+
+    for (int i = 0; i < 64; i++) {
+        pwnyfree(ptrs[i]);
+    }
+
+    void *final = pwnymalloc(0x10);
+    assert(final != NULL);
+    pwnyfree(final);
+
+    puts("[OK] estresse");
+}
+
+/*
  * O mesmo bug aparece no split(): o coalesce() do resto le um tag que cai no
  * fim dos dados do chunk recem-alocado. Aqui plantamos um tag e um header
  * falsos nessa regiao antes de liberar o bloco grande. Com PREV_INUSE=1 o
@@ -179,8 +225,8 @@ int main(int argc, char **argv) {
 
     if (argc != 2) {
         fprintf(stderr,
-                "uso: %s {basico|prev_livre|split|cauda_envenenada|"
-                "double_free|ponteiro_invalido}\n",
+                "uso: %s {basico|prev_livre|split|reuso|estresse|"
+                "cauda_envenenada|double_free|ponteiro_invalido}\n",
                 argv[0]);
         return 2;
     }
@@ -191,6 +237,10 @@ int main(int argc, char **argv) {
         test_prev_livre();
     } else if (strcmp(argv[1], "split") == 0) {
         test_split();
+    } else if (strcmp(argv[1], "reuso") == 0) {
+        test_reuso();
+    } else if (strcmp(argv[1], "estresse") == 0) {
+        test_estresse();
     } else if (strcmp(argv[1], "cauda_envenenada") == 0) {
         test_cauda_envenenada();
     } else if (strcmp(argv[1], "double_free") == 0) {

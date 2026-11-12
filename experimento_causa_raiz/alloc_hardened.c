@@ -72,8 +72,8 @@ static void set_status(chunk_ptr block, int status);
 static int get_prev_inuse(chunk_ptr block);
 static void set_prev_inuse(chunk_ptr block, int value);
 static chunk_ptr next_chunk(chunk_ptr block);
+static void update_prev_inuse_after_status_change(chunk_ptr block, int new_status);
 static chunk_ptr prev_chunk(chunk_ptr block);
-static chunk_ptr last_chunk(void);
 
 static chunk_ptr extend_heap(size_t size);
 static chunk_ptr find_fit(size_t size);
@@ -86,6 +86,14 @@ static void *heap_start = NULL;
 static void *heap_end = NULL;
 
 static chunk_ptr free_list = NULL;
+
+/*
+ * Status (INUSE/FREE) do chunk que termina em heap_end. So e usado quando um
+ * chunk novo nasce em extend_heap() e ainda nao existe um "proximo chunk"
+ * para carregar o bit PREV_INUSE. Comeca em INUSE: antes da primeira
+ * alocacao nao ha footer confiavel para ler.
+ */
+static int heap_tail_inuse = 1;
 
 
 /**
@@ -151,6 +159,25 @@ static chunk_ptr next_chunk(chunk_ptr block) {
         return NULL;
     }
     return (chunk_ptr) ((char *) block + size);
+}
+
+/*
+ * Chamar uma unica vez, sempre que um chunk `block` (com endereco e tamanho
+ * FINAIS, depois de qualquer split/coalesce) assume `new_status`. Propaga o
+ * estado para quem precisa saber: o vizinho fisico seguinte (via o bit
+ * PREV_INUSE do header dele) ou, se `block` for o ultimo chunk do heap, para
+ * a variavel global heap_tail_inuse.
+ *
+ * Isso evita varrer o heap inteiro em extend_heap() para descobrir o status
+ * do ultimo chunk (O(1) em vez de O(n)).
+ */
+static void update_prev_inuse_after_status_change(chunk_ptr block, int new_status) {
+    chunk_ptr nxt = next_chunk(block);
+    if (nxt == NULL) {
+        heap_tail_inuse = new_status;
+    } else {
+        set_prev_inuse(nxt, new_status == INUSE);
+    }
 }
 
 /*
@@ -222,22 +249,6 @@ static chunk_ptr prev_chunk(chunk_ptr block) {
  * Core helpers
  */
 
-static chunk_ptr last_chunk(void) {
-    if (heap_start == NULL || heap_start == heap_end) {
-        return NULL;
-    }
-
-    chunk_ptr block = (chunk_ptr) heap_start;
-    for (size_t i = 0; i < 1000000; i++) {
-        chunk_ptr next = next_chunk(block);
-        if (next == NULL || (char *) next <= (char *) block) {
-            return block;
-        }
-        block = next;
-    }
-    return block;
-}
-
 static chunk_ptr extend_heap(size_t size) {
     chunk_ptr block = (chunk_ptr) sbrk(size);
     if (block == (void *) -1) {
@@ -248,15 +259,13 @@ static chunk_ptr extend_heap(size_t size) {
      * Se o ultimo chunk do heap esta livre, o novo chunk nasce encostado
      * nele; nesse caso o footer anterior existe e PREV_INUSE=0. Caso
      * contrario, o anterior esta em uso e o footer nao pode ser lido.
+     * heap_tail_inuse mantem esse estado em O(1).
      */
-    int prev_inuse = 1;
-    chunk_ptr last = last_chunk();
-    if (last != NULL && get_status(last) == FREE) {
-        prev_inuse = 0;
-    }
+    int prev_inuse = heap_tail_inuse;
 
     block->size = make_header(size, INUSE, prev_inuse);
     heap_end = (void *) block + size;
+    heap_tail_inuse = INUSE;
     return block;
 }
 
@@ -266,6 +275,12 @@ static chunk_ptr find_fit(size_t size) {
         if (get_size(block) >= size) {
             free_list_remove(block);
             set_status(block, INUSE);
+            /*
+             * `block` ainda tem o tamanho ORIGINAL (cheio) aqui: e esse
+             * tamanho que determina o vizinho fisico seguinte, mesmo que
+             * split() encolha `block` depois.
+             */
+            update_prev_inuse_after_status_change(block, INUSE);
             return block;
         }
         block = block->next;
@@ -319,11 +334,6 @@ static chunk_ptr coalesce(chunk_ptr block) {
         prev_block->size = make_header(size, FREE, prev_prev_inuse);
         set_btag(prev_block, size);
 
-        chunk_ptr after = next_chunk(prev_block);
-        if (after != NULL) {
-            set_prev_inuse(after, 0);
-        }
-
         return prev_block;
     }
     if (prev_status == FREE) {
@@ -335,11 +345,6 @@ static chunk_ptr coalesce(chunk_ptr block) {
         prev_block->size = make_header(size, FREE, prev_prev_inuse);
         set_btag(prev_block, size);
 
-        chunk_ptr after = next_chunk(prev_block);
-        if (after != NULL) {
-            set_prev_inuse(after, 0);
-        }
-
         return prev_block;
     }
     if (next_status == FREE) {
@@ -350,11 +355,6 @@ static chunk_ptr coalesce(chunk_ptr block) {
         size += get_size(next_block);
         block->size = make_header(size, FREE, block_prev_inuse);
         set_btag(block, size);
-
-        chunk_ptr after = next_chunk(block);
-        if (after != NULL) {
-            set_prev_inuse(after, 0);
-        }
 
         return block;
     }
@@ -378,12 +378,8 @@ static void split(chunk_ptr block, size_t size) {
      * livre. O chunk alocado antes do resto esta em uso, entao o resto tem
      * PREV_INUSE=1 e nao le o tag que cai no fim dos dados do usuario.
      */
-    chunk_ptr after = next_chunk(new_block);
-    if (after != NULL) {
-        set_prev_inuse(after, 0);
-    }
-
     new_block = coalesce(new_block);
+    update_prev_inuse_after_status_change(new_block, FREE);
     free_list_insert(new_block);
 }
 
@@ -409,15 +405,6 @@ void *pwnymalloc(size_t size) {
         }
     } else if (get_size((chunk_ptr) block) >= total_size + MIN_BLOCK_SIZE) {
         split(block, total_size);
-    } else {
-        /*
-         * O bloco inteiro foi entregue. O chunk seguinte deixa de ter um
-         * vizinho anterior livre.
-         */
-        chunk_ptr next = next_chunk(block);
-        if (next != NULL) {
-            set_prev_inuse(next, 1);
-        }
     }
 
     return (void *) ((char *) block + INUSE_META_SIZE);
@@ -439,17 +426,15 @@ void pwnyfree(void *ptr) {
     set_status(block, FREE);
     set_btag(block, get_size(block));
 
-    /*
-     * O bloco agora esta livre: o chunk seguinte, se existir, passa a ter
-     * um vizinho anterior livre. Isso e o que permite a coalescencia
-     * legitima com o proximo e impede que o proximo leia um tag invalido.
-     */
-    chunk_ptr next = next_chunk(block);
-    if (next != NULL) {
-        set_prev_inuse(next, 0);
-    }
-
     block = coalesce(block);
+
+    /*
+     * O bloco resultante esta livre: o chunk seguinte, se existir, passa a
+     * ter um vizinho anterior livre (e o ultimo chunk do heap atualiza
+     * heap_tail_inuse). Isso e o que permite a coalescencia legitima com o
+     * proximo e impede que o proximo leia um tag invalido.
+     */
+    update_prev_inuse_after_status_change(block, FREE);
 
     printf("Block size: %zu\n", get_size(block));
 

@@ -1,0 +1,132 @@
+[pwnymalloc] PREV_INUSE=1: btag em 0x64e3edbaf028 nao sera lido (chunk anterior em uso)
+Block size: 32
+[pwnymalloc] btag aceito: prev_size=32 candidato=0x64e3edbaf030
+Block size: 64
+[pwnymalloc] btag aceito: prev_size=64 candidato=0x64e3edbaf030
+Block size: 96
+[pwnymalloc] btag aceito: prev_size=96 candidato=0x64e3edbaf030
+Block size: 128
+[pwnymalloc] btag aceito: prev_size=128 candidato=0x64e3edbaf030
+Block size: 160
+[pwnymalloc] btag aceito: prev_size=160 candidato=0x64e3edbaf030
+Block size: 192
+[pwnymalloc] btag aceito: prev_size=192 candidato=0x64e3edbaf030
+Block size: 224
+[pwnymalloc] btag aceito: prev_size=224 candidato=0x64e3edbaf030
+Block size: 256
+[pwnymalloc] btag aceito: prev_size=256 candidato=0x64e3edbaf030
+Block size: 288
+[pwnymalloc] btag aceito: prev_size=288 candidato=0x64e3edbaf030
+Block size: 320
+[pwnymalloc] btag aceito: prev_size=320 candidato=0x64e3edbaf030
+Block size: 352
+[pwnymalloc] btag aceito: prev_size=352 candidato=0x64e3edbaf030
+Block size: 384
+[pwnymalloc] btag aceito: prev_size=384 candidato=0x64e3edbaf030
+Block size: 416
+[pwnymalloc] btag aceito: prev_size=416 candidato=0x64e3edbaf030
+Block size: 448
+[pwnymalloc] btag aceito: prev_size=448 candidato=0x64e3edbaf030
+Block size: 480
+[pwnymalloc] btag aceito: prev_size=480 candidato=0x64e3edbaf030
+Block size: 512
+[pwnymalloc] btag aceito: prev_size=512 candidato=0x64e3edbaf030
+Block size: 544
+[pwnymalloc] btag aceito: prev_size=544 candidato=0x64e3edbaf030
+Block size: 576
+[pwnymalloc] btag aceito: prev_size=576 candidato=0x64e3edbaf030
+Block size: 608
+[pwnymalloc] btag aceito: prev_size=608 candidato=0x64e3edbaf030
+Block size: 640
+[pwnymalloc] btag aceito: prev_size=640 candidato=0x64e3edbaf030
+Block size: 672
+[pwnymalloc] btag aceito: prev_size=672 candidato=0x64e3edbaf030
+Block size: 704
+[pwnymalloc] btag aceito: prev_size=704 candidato=0x64e3edbaf030
+Block size: 736
+[pwnymalloc] btag aceito: prev_size=736 candidato=0x64e3edbaf030
+Block size: 768
+[pwnymalloc] btag aceito: prev_size=768 candidato=0x64e3edbaf030
+Block size: 800
+[pwnymalloc] btag aceito: prev_size=800 candidato=0x64e3edbaf030
+Block size: 832
+[pwnymalloc] btag aceito: prev_size=832 candidato=0x64e3edbaf030
+Block size: 864
+[pwnymalloc] btag aceito: prev_size=864 candidato=0x64e3edbaf030
+Block size: 896
+[pwnymalloc] btag aceito: prev_size=896 candidato=0x64e3edbaf030
+Block size: 928
+[pwnymalloc] btag aceito: prev_size=928 candidato=0x64e3edbaf030
+Block size: 960
+[pwnymalloc] btag aceito: prev_size=960 candidato=0x64e3edbaf030
+Block size: 992
+[pwnymalloc] btag aceito: prev_size=992 candidato=0x64e3edbaf030
+Block size: 1024
+[pwnymalloc] btag aceito: prev_size=1024 candidato=0x64e3edbaf030
+Block size: 1056
+[pwnymalloc] btag aceito: prev_size=1056 candidato=0x64e3edbaf030
+Block size: 1088
+[pwnymalloc] btag aceito: prev_size=1088 candidato=0x64e3edbaf030
+Block size: 1120
+[pwnymalloc] btag aceito: prev_size=1120 candidato=0x64e3edbaf030
+Block size: 1152
+[pwnymalloc] btag aceito: prev_size=1152 candidato=0x64e3edbaf030
+Block size: 1184
+[pwnymalloc] btag aceito: prev_size=1184 candidato=0x64e3edbaf030
+Block size: 1216
+[pwnymalloc] btag aceito: prev_size=1216 candidato=0x64e3edbaf030
+Block size: 1248
+[pwnymalloc] btag aceito: prev_size=1248 candidato=0x64e3edbaf030
+Block size: 1280
+[pwnymalloc] btag aceito: prev_size=1280 candidato=0x64e3edbaf030
+Block size: 1312
+[pwnymalloc] btag aceito: prev_size=1312 candidato=0x64e3edbaf030
+Block size: 1344
+[pwnymalloc] btag aceito: prev_size=1344 candidato=0x64e3edbaf030
+Block size: 1376
+[pwnymalloc] btag aceito: prev_size=1376 candidato=0x64e3edbaf030
+Block size: 1408
+[pwnymalloc] btag aceito: prev_size=1408 candidato=0x64e3edbaf030
+Block size: 1440
+[pwnymalloc] btag aceito: prev_size=1440 candidato=0x64e3edbaf030
+Block size: 1472
+[pwnymalloc] btag aceito: prev_size=1472 candidato=0x64e3edbaf030
+Block size: 1504
+[pwnymalloc] btag aceito: prev_size=1504 candidato=0x64e3edbaf030
+Block size: 1536
+[pwnymalloc] btag aceito: prev_size=1536 candidato=0x64e3edbaf030
+Block size: 1568
+[pwnymalloc] btag aceito: prev_size=1568 candidato=0x64e3edbaf030
+Block size: 1600
+[pwnymalloc] btag aceito: prev_size=1600 candidato=0x64e3edbaf030
+Block size: 1632
+[pwnymalloc] btag aceito: prev_size=1632 candidato=0x64e3edbaf030
+Block size: 1664
+[pwnymalloc] btag aceito: prev_size=1664 candidato=0x64e3edbaf030
+Block size: 1696
+[pwnymalloc] btag aceito: prev_size=1696 candidato=0x64e3edbaf030
+Block size: 1728
+[pwnymalloc] btag aceito: prev_size=1728 candidato=0x64e3edbaf030
+Block size: 1760
+[pwnymalloc] btag aceito: prev_size=1760 candidato=0x64e3edbaf030
+Block size: 1792
+[pwnymalloc] btag aceito: prev_size=1792 candidato=0x64e3edbaf030
+Block size: 1824
+[pwnymalloc] btag aceito: prev_size=1824 candidato=0x64e3edbaf030
+Block size: 1856
+[pwnymalloc] btag aceito: prev_size=1856 candidato=0x64e3edbaf030
+Block size: 1888
+[pwnymalloc] btag aceito: prev_size=1888 candidato=0x64e3edbaf030
+Block size: 1920
+[pwnymalloc] btag aceito: prev_size=1920 candidato=0x64e3edbaf030
+Block size: 1952
+[pwnymalloc] btag aceito: prev_size=1952 candidato=0x64e3edbaf030
+Block size: 1984
+[pwnymalloc] btag aceito: prev_size=1984 candidato=0x64e3edbaf030
+Block size: 2016
+[pwnymalloc] btag aceito: prev_size=2016 candidato=0x64e3edbaf030
+Block size: 2048
+[pwnymalloc] PREV_INUSE=1: btag em 0x64e3edbaf048 nao sera lido (chunk anterior em uso)
+[pwnymalloc] PREV_INUSE=1: btag em 0x64e3edbaf028 nao sera lido (chunk anterior em uso)
+Block size: 2048
+[OK] estresse

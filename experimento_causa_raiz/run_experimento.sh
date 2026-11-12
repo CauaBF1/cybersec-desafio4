@@ -77,7 +77,7 @@ fi
 echo
 
 echo "--- regressao funcional ---"
-for t in basico prev_livre split double_free ponteiro_invalido; do
+for t in basico prev_livre split reuso estresse double_free ponteiro_invalido; do
     run_test "$BUILD/test_vuln" "$t" 0 vuln
     run_test "$BUILD/test_naive" "$t" 0 naive
     run_test "$BUILD/test_hardened" "$t" 0 hardened
