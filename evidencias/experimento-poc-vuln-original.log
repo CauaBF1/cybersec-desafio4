@@ -1,0 +1,6 @@
+[poc] base=0x63b473795000 rr0=0x63b473795008 rr1=0x63b473795098 complaint=0x63b473795128
+[poc] variante=original header_falso=0x63b473795078 size=0x50 prev_size=0xa8
+[poc] esperado_merge=0xa0
+Block size: 160
+[poc] novo_chunk=0x63b473795078 overlap=sim offset_status=16 status_rr1=1
+RESULTADO: overlap=sim status_aprovado=sim

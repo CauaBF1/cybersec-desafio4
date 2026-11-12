@@ -1,0 +1,8 @@
+[pwnymalloc] btag rejeitado: prev_size=0 candidato=0x5b15fb6f6030 motivo=tamanho zero
+Block size: 272
+[pwnymalloc] btag rejeitado: prev_size=0 candidato=0x5b15fb6f6080 motivo=tamanho zero
+[pwnymalloc] btag rejeitado: prev_size=0 candidato=0x5b15fb6f6080 motivo=tamanho zero
+Block size: 192
+[pwnymalloc] btag rejeitado: prev_size=0 candidato=0x5b15fb6f6030 motivo=tamanho zero
+Block size: 272
+[OK] split

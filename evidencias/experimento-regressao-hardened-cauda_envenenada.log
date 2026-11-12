@@ -1,0 +1,5 @@
+[teste] x=0x595b3790a038 fake_hdr=0x595b3790a050 tag_pos=0x595b3790a078
+[pwnymalloc] PREV_INUSE=1: btag em 0x595b3790a028 nao sera lido (chunk anterior em uso)
+Block size: 272
+[pwnymalloc] PREV_INUSE=1: btag em 0x595b3790a078 nao sera lido (chunk anterior em uso)
+[OK] cauda_envenenada

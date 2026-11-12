@@ -1,0 +1,7 @@
+[pwnymalloc] PREV_INUSE=1: btag em 0x5c9a06dea028 nao sera lido (chunk anterior em uso)
+Block size: 48
+[pwnymalloc] btag aceito: prev_size=48 candidato=0x5c9a06dea030
+Block size: 128
+[pwnymalloc] PREV_INUSE=1: btag em 0x5c9a06dea028 nao sera lido (chunk anterior em uso)
+Block size: 128
+[OK] prev_livre

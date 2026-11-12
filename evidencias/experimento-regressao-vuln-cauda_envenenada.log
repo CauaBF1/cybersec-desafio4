@@ -1,0 +1,4 @@
+[teste] x=0x5f5cc63f6038 fake_hdr=0x5f5cc63f6050 tag_pos=0x5f5cc63f6078
+Block size: 272
+test_vuln: test_regressao.c:143: test_cauda_envenenada: Assertion `c == (char *) x + 0x50' failed.
+_: line 1: 285468 Aborted                    "$1" "$2"

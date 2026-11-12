@@ -1,0 +1,5 @@
+[pwnymalloc] PREV_INUSE=1: btag em 0x62765f690058 nao sera lido (chunk anterior em uso)
+Block size: 80
+[pwnymalloc] PREV_INUSE=1: btag em 0x62765f690028 nao sera lido (chunk anterior em uso)
+Block size: 128
+[OK] basico
